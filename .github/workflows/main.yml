@@ -1,11 +1,9 @@
 # File: .github/workflows/template-sync.yml
 
-on:
-  # cronjob trigger
-  schedule:
-  - cron: "0 0 1 * *"
-  # manual trigger
-  workflow_dispatch:
+on: 
+  push:
+    # only trigger on branches, not on tags
+    branches: '**'
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
